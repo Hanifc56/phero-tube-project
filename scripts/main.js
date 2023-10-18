@@ -11,7 +11,7 @@ const handleCatagory = async () => {
         `;
         tabContainer.appendChild(tabDiv);
     })
-    // my_modal_1.showModal(); 
+   
     
 };
 const getVideos = async (category_id)=>{
@@ -19,7 +19,7 @@ const getVideos = async (category_id)=>{
     const data = await response.json();
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML="";
-    onClickBlog('1005');
+  
     data.data.forEach((videoCard)=>{
         console.log(videoCard);
         const div = document.createElement('div');
@@ -52,7 +52,7 @@ const getVideos = async (category_id)=>{
         `;
         cardContainer.appendChild(div);
     })
-    // my_modal_1.showModal();
+    onClickBlog('1005');
     
 }
 
