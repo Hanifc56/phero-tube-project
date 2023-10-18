@@ -1,21 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PH-TUBE</title>
-    <!-- tailwind and daisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PH-TUBE</title>
+  <!-- tailwind and daisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   
+  </style>
 </head>
+
 <body>
-    <header>
-        <!-- nabvar goes here -->
-    </header>
-    <main>
-        <!-- contents goes here -->
-    </main>
-    <!-- js file here -->
-    <script src="scripts/main.js"></script>
+  <header>
+    <!-- nabvar goes here -->
+    <div class="navbar bg-base-100">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </label>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a>Item 1</a></li>
+            <li>
+              <a>Parent</a>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </li>
+            <li><a>Item 3</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a>Item 1</a></li>
+          <li tabindex="0">
+            <details>
+              <summary>Parent</summary>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a>Item 3</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a class="btn">Button</a>
+      </div>
+    </div>
+    <!-- tab goes here -->
+    <section class="tab-container w-full">
+      <div id="tab-container" class="tabs tabs p-5 w-96 m-auto text-center flex justify-center">
+        <!-- <div class="tabs tabs-boxed">
+          <a class="tab">Tab 1</a> 
+          <a class="tab tab-active">Tab 2</a> 
+          <a class="tab">Tab 3</a>
+        </div> -->
+      </div>
+    
+    </section>
+  </header>
+  <main>
+    <!-- contents goes here -->
+    <section id="card-container" class="m-16 grid grid-cols-1 md:grid-cols-2 lg: lg:grid-cols-4 gap-4">
+      <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg: lg:grid-cols-4">
+        <div class="card w-96 bg-base-100 shadow-xl">
+          <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+          <div class="flex justify-between py-8 px-4">
+              <div class="avatar flex-1">
+                <div class="w-24 h-24 rounded-full">
+                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </div>
+              <div class="flex-1">
+                  <h2 class="card-title">
+                    Building a Winning UX Strategy Using the Kano Model
+                  </h2>
+                 <p>Awlad Hossain</p>
+                 <p>91K views</p>
+              </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
+  </main>
+  <!-- js file here -->
+  <script src="scripts/main.js"></script>
 </body>
+
 </html>
