@@ -16,26 +16,32 @@ const getVideos = async (category_id)=>{
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${category_id}`);
     const data = await response.json();
     const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML="";
     data.data.forEach((videoCard)=>{
         console.log(videoCard);
         const div = document.createElement('div');
         div.classList.add('grid');
         div.innerHTML=`
         <div class="">
-        <div class="card w-96">
-          <figure class="w-fit rounded-xl"><img src=${videoCard.thumbnail} alt="" /></figure>
-          <div class="flex justify-between py-8 px-4">
-              <div class="avatar flex-1">
-                <div class="w-24 h-24 rounded-full">
-                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <div class="card w-96 h-96">
+          <figure class="w-full rounded-xl"><img src=${videoCard.thumbnail} alt="" /></figure>
+          <div class="flex py-8 px-4">
+              <div class="avatar ">
+                <div class="w-12 h-12 rounded-full">
+                  <img src=${videoCard?.authors[0].profile_picture
+                  } />
+                  
                 </div>
               </div>
-              <div class="flex-1">
+              <div class="pl-8">
                   <h2 class="card-title">
-                    Building a Winning UX Strategy Using the Kano Model
+                    ${videoCard.title
+                    }
                   </h2>
-                 <p>Awlad Hossain</p>
-                 <p>91K views</p>
+                 <p>${videoCard?.authors[0].profile_name
+                 } <span>${videoCard.authors[0].verified ? '<img src="images/verified.svg"></img>' : ''} </span></p>
+               
+                 <p>${videoCard.others.views} views</p>
               </div>
           </div>
         </div>
@@ -54,3 +60,4 @@ const getVideos = async (category_id)=>{
 
 
 handleCatagory();
+getVideos('1000', '1001','1002', '1003');
